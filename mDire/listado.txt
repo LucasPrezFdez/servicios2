@@ -1,0 +1,10 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: D0BE-6F16
+
+ Directorio de C:\Users\DAM2\IdeaProjects\Servicios2\mDire
+
+08/01/2026  14:50    <DIR>          .
+08/01/2026  14:50    <DIR>          ..
+08/01/2026  14:50                 0 listado.txt
+               1 archivos              0 bytes
+               2 dirs  117.899.988.992 bytes libres

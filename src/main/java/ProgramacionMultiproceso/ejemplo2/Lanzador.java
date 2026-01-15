@@ -14,8 +14,8 @@ public class Lanzador {
 
     public static void main(String[] args) {
         Lanzador l = new Lanzador();
-        l.lanzarSumador(1, 51);
-        l.lanzarSumador(51, 100);
+        l.lanzarSumador(1, 200);
+        l.lanzarSumador(201, 400);
         System.out.println("Ok");
     }
 }

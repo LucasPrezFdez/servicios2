@@ -37,8 +37,8 @@ public class Lanzador {
         Lanzador l = new Lanzador();
 
         System.out.println("Lanzando procesos...");
-        l.lanzarSumador(1, 50, "result1.txt");
-        l.lanzarSumador(51, 100, "result2.txt");
+        l.lanzarSumador(1, 200, "result1.txt");
+        l.lanzarSumador(201, 400, "result2.txt");
 
         System.out.println("Procesos lanzados. Verifica los ficheros result1.txt y result2.txt");
 

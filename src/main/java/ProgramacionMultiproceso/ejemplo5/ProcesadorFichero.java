@@ -7,43 +7,45 @@ import java.io.PrintWriter;
 
 public class ProcesadorFichero {
 
-    // Dado un fichero de entrada y una letra
-    // contamos cuantas veces aparece dicha letra
-    // y dejamos el recuento en un fichero de salida
-    public static void hacerRecuento(String fichEntrada, String letra, String fichSalida) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws IOException {
+        // CORRECCIÓN 3: Los argumentos en Java empiezan en 0.
+        // args[0]: Fichero entrada
+        // args[1]: Letra
+        // args[2]: Fichero salida
+        if (args.length >= 3) {
+            hacerRecuento(args[0], args[1], args[2]);
+        } else {
+            System.err.println("Faltan argumentos: <fichero> <letra> <salida>");
+        }
+    }
 
+    public static void hacerRecuento(String fichEntrada, String letra,
+                                     String fichSalida) throws FileNotFoundException, IOException {
+        BufferedReader br = Utiles.getBufferedReader(fichEntrada);
+        PrintWriter pw = Utiles.getPrintWriter(fichSalida);
+        String lineaLeida = br.readLine();
+        int totalVocales = 0;
+
+        // Convertimos la letra buscada a minúscula para comparar sin importar mayús/minús (opcional, pero recomendado)
+        // O lo dejamos tal cual si quieres que sea sensible a mayúsculas
         char letraPasada = letra.charAt(0);
 
-        BufferedReader br;
-        br = Utiles.getBufferedReader(fichEntrada);
-        PrintWriter pw;
-        pw = Utiles.getPrintWriter(fichSalida);
-        String lineaLeida;
-        lineaLeida = br.readLine();
-        int totalVocales = 0;
-        //Mientras no queden líneas....
         while (lineaLeida != null) {
-        //...recorremos la linea...
             for (int i = 0; i < lineaLeida.length(); i++) {
                 char letraLeida = lineaLeida.charAt(i);
-                // incrementamos el contador
+
+                // Comparación directa (Case sensitive según tu código original)
+                // Si quieres contar 'a' y 'A' igual, convierte ambos a lowerCase aquí.
                 if (letraLeida == letraPasada) {
                     totalVocales++;
                 }
-                //fin del if
-
             }
-            //fin del for
-            // Pasamos a la siguiente linea
             lineaLeida = br.readLine();
         }
-        //Escribimos el total de vocales
-        //en el fichero de salida
+
         pw.println(totalVocales);
         pw.flush();
-        //Y cerramos los ficheros
         pw.close();
         br.close();
-        //fin del método hacerRecuento
     }
 }

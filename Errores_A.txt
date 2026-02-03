@@ -1,0 +1,2 @@
+Error: Could not find or load main class ProgramacionMultiproceso.ejemplo5.ProcesadorFichero
+Caused by: java.lang.ClassNotFoundException: ProgramacionMultiproceso.ejemplo5.ProcesadorFichero
